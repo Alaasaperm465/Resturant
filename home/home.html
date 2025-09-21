@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Premium Restaurant</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-utensils"></i> Foodie
+      </div>
+      
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-box" placeholder="Search delicious meals...">
+      </div>
+      
+      <nav class="nav-menu">
+        <div class="nav-item" data-action="categories">
+          <i class="fas fa-th-large"></i> Categories
+        </div>
+        <div class="nav-item" data-action="ingredients">
+          <i class="fas fa-leaf"></i> Ingredients
+        </div>
+        <div class="nav-item" data-action="areas">
+          <i class="fas fa-map-marker-alt"></i> Areas
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="filter-section">
+        <div class="filter-title">
+          <i class="fas fa-filter"></i> Categories
+        </div>
+        <select id="categories" class="filter-select">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">
+          <i class="fas fa-seedling"></i> Ingredients
+        </div>
+        <select id="ingredients" class="filter-select">
+          <option value="">All Ingredients</option>
+        </select>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">
+          <i class="fas fa-map-marker-alt"></i> Areas
+        </div>
+        <select id="areas" class="filter-select">
+          <option value="">All Areas</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+      <div class="section-header">
+        <h1 class="section-title">Featured Dishes</h1>
+      </div>
+
+      <div class="meals-grid">
+        <!-- Meals will render here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <p>Foodie brings you delicious meals from all around the world.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+
+</body>
+</html>
