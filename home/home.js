@@ -126,6 +126,14 @@ function getMealsByUrl(url) {
   xhr.send();
 }
 
+const searchMealInput = document.getElementById("searchMealsInput");
+
+searchMealInput.addEventListener("input", (e) => {
+  if (e.target.value.trim().length > 0) {
+    getMealsByUrl(`https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.value}`)
+  }
+})
+
 // ===================== Render meals list =====================
 function renderMeals(meals) {
   mealsSection.innerHTML = "";
@@ -163,6 +171,8 @@ function showMealDetails(mealId) {
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       const data = JSON.parse(this.responseText);
+      console.log(data);
+      
       if (data.meals && data.meals.length > 0) {
         renderMealDetails(data.meals[0]);
       }
@@ -177,8 +187,8 @@ function renderMealDetails(meal) {
   for (let i = 1; i <= 20; i++) {
     const ing = meal[`strIngredient${i}`];
     const measure = meal[`strMeasure${i}`];
-    if (ing && ing.trim()) {
-      ingredients.push(`${ing} - ${measure}`);
+    if (ing.trim().length > 0 && measure.trim().length > 0) {
+      ingredients.push(`${measure} - ${ing}`);
     }
   }
 
@@ -224,8 +234,7 @@ function renderMealDetails(meal) {
               <div class="ingredients-grid">
                 ${ingredients.map(ing => `
                   <div class="ingredient-item">
-                    <span class="ingredient-name">${ing.name}</span>
-                    <span class="ingredient-measure">${ing.measure}</span>
+                    <span class="ingredient-name">${ing}</span>
                   </div>
                 `).join('')}
               </div>
