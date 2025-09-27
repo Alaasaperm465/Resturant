@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.checkout-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.checkout-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#confirmOrder {
+  background: #4caf50;
+  color: white;
+}
+
+#confirmOrder:hover {
+  background: #45a049;
+}

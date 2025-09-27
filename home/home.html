@@ -6,7 +6,6 @@
   <title>Foodie - Premium Restaurant</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
-
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +21,10 @@
       </div>
       
       <nav class="nav-menu">
-        <div onclick="getAllCategories()" class="nav-item" data-action="categories">
+        <div class="nav-item" data-action="home">
+          <i class="fas fa-home"></i> Home
+        </div>
+        <div class="nav-item" data-action="categories">
           <i class="fas fa-th-large"></i> Categories
         </div>
         <div class="nav-item" data-action="ingredients">
@@ -36,48 +38,12 @@
   </header>
 
   <!-- Main Layout -->
-  <div class="main-layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="filter-section">
-        <div class="filter-title">
-          <i class="fas fa-filter"></i> Categories
-        </div>
-        <select id="categories" class="filter-select">
-          <option value="">All Categories</option>
-        </select>
-      </div>
-      
-      <div class="filter-section">
-        <div class="filter-title">
-          <i class="fas fa-seedling"></i> Ingredients
-        </div>
-        <select id="ingredients" class="filter-select">
-          <option value="">All Ingredients</option>
-        </select>
-      </div>
-      
-      <div class="filter-section">
-        <div class="filter-title">
-          <i class="fas fa-map-marker-alt"></i> Areas
-        </div>
-        <select id="areas" class="filter-select">
-          <option value="">All Areas</option>
-        </select>
-      </div>
-    </aside>
-
-    <!-- Content -->
-    <main class="content">
-      <div class="section-header">
-        <h1 class="section-title">Featured Dishes</h1>
-      </div>
-
-      <div class="meals-grid">
-        <!-- Meals will render here -->
-      </div>
-    </main>
-  </div>
+  <main class="content">
+    <!-- <div class="section-header">
+      <h1 class="section-title">Featured Dishes</h1>
+    </div> -->
+    <div class="meals-grid"></div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -106,6 +72,14 @@
   </footer>
 
   <script src="home.js"></script>
+  <script>
+    // Navbar actions
 
+
+    // Load home on page start
+    window.addEventListener("load", () => {
+      getAllMeals();
+    });
+  </script>
 </body>
 </html>
