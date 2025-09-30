@@ -194,7 +194,7 @@ function renderMealDetails(meal) {
 
   mealsSection.innerHTML = `
       <div class="meal-details-section">
-        <button class="back-button" onclick="window.history.back()">
+        <button class="back-button" onclick="getAllMeals()">
           <i class="fas fa-arrow-left"></i> Back to Meals
         </button>
         
