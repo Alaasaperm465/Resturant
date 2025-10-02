@@ -15,7 +15,7 @@ document.querySelectorAll(".nav-item").forEach(item => {
 
 const mealsSection = document.querySelector(".meals-grid");
 
-// ===================== Get all categories =====================
+//Get all categories 
 function getAllCategories() {
   mealsSection.innerHTML = "";
   var xhr = new XMLHttpRequest();
@@ -40,7 +40,7 @@ function getAllCategories() {
   xhr.send();
 }
 
-// ===================== Get all areas =====================
+// Get all areas 
 function getAllAreas() {
   mealsSection.innerHTML = "";
   var xhr = new XMLHttpRequest();
@@ -65,7 +65,7 @@ function getAllAreas() {
   xhr.send();
 }
 
-// ===================== Get all ingredients =====================
+// Get all ingredients 
 function getAllIngredients() {
   mealsSection.innerHTML = "";
   var xhr = new XMLHttpRequest();
@@ -90,7 +90,7 @@ function getAllIngredients() {
   xhr.send();
 }
 
-// ===================== Home (all meals) =====================
+//  Home all meals
 function getAllMeals() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://www.themealdb.com/api/json/v1/1/search.php?s=", true);
@@ -103,7 +103,7 @@ function getAllMeals() {
   xhr.send();
 }
 
-// ===================== Helpers to get meals by filters =====================
+//  Helpers to get meals by filters 
 function getMealsForCategory(name) {
   getMealsByUrl(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
 }
@@ -134,7 +134,7 @@ searchMealInput.addEventListener("input", (e) => {
   }
 })
 
-// ===================== Render meals list =====================
+//  Render meals list 
 function renderMeals(meals) {
   mealsSection.innerHTML = "";
   if (!meals || meals.length === 0) {
@@ -155,7 +155,7 @@ function renderMeals(meals) {
       </div>
     `;
 
-    // ✅ click to show details
+    //  click to show details
     card.addEventListener("click", () => {
       showMealDetails(meal.idMeal);
     });
@@ -164,7 +164,7 @@ function renderMeals(meals) {
   });
 }
 
-// ===================== Show one meal details =====================
+//  Show one meal details 
 function showMealDetails(mealId) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`, true);
@@ -181,7 +181,7 @@ function showMealDetails(mealId) {
   xhr.send();
 }
 
-// ===================== Render meal details =====================
+//  Render meal details 
 function renderMealDetails(meal) {
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
@@ -270,5 +270,5 @@ function renderMealDetails(meal) {
     `;
 }
 
-// ===================== Start app by showing all meals =====================
+//  Start app by showing all meals 
 getAllMeals();
