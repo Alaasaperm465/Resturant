@@ -1,15 +1,13 @@
-// Function to save user data during Sign Up
+// Sign Up
 function registerUser(name, email, password) {
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
-  // check if email already exists
   let exists = users.find(u => u.email === email);
   if (exists) {
     alert(" Email already registered. Please login.");
     return false;
   }
 
-  // add new user
   users.push({ name, email, password });
   localStorage.setItem("users", JSON.stringify(users));
   alert("Account created successfully! Please login.");
@@ -17,7 +15,7 @@ function registerUser(name, email, password) {
   return true;
 }
 
-// Function to login
+// login
 function loginUser(email, password) {
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let user = users.find(u => u.email === email && u.password === password);
@@ -34,9 +32,7 @@ function loginUser(email, password) {
   }
 }
 
-// Attach events
 document.addEventListener("DOMContentLoaded", () => {
-  // Sign Up form
   let signupForm = document.querySelector("#signupForm");
   if (signupForm) {
     signupForm.addEventListener("submit", (e) => {
@@ -47,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let confirmPassword = document.querySelector("#signupConfirmPassword").value.trim();
 
       if (password !== confirmPassword) {
-        alert("⚠️ Passwords do not match!");
+        alert(" Passwords do not match!");
         return;
       }
 

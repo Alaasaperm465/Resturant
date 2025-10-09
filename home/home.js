@@ -155,7 +155,7 @@ function renderMeals(meals) {
       </div>
     `;
 
-    // ✅ click to show details
+    // click to show details
     card.addEventListener("click", () => {
       showMealDetails(meal.idMeal);
     });
@@ -270,5 +270,5 @@ function renderMealDetails(meal) {
     `;
 }
 
-// ===================== Start app by showing all meals =====================
+
 getAllMeals();
